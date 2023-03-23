@@ -1,2 +1,2 @@
 # Clicker-project
-# Click the button to earn money.
+Click the button to earn money.
