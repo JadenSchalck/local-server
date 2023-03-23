@@ -2,17 +2,22 @@
 <html>
     <header>
         <title>Clicker game</title>
-        <script type="text/javascript" src="scripts.js"></script>
+        <script src="scripts.js"></script>
         <link type="text/css" rel="stylesheet" href="styles.css">
         <link type="text/css" rel="stylesheet" href="modern.css">
     </header>
 
     <body>
-        <button class="modern_square" type="button" onclick="click()">Click me</button>
-        <h1>Test</h1>
+        <div id="moneyHolder">
+            <p id="money">$0</p>
+        </div>
+
+        <input type="button" id="mainButton" class="modern_square" onclick="buttonPressed();" value="Click me">
     </body>
 
     <footer>
-
+        <div id="bottomInfo">
+            <h8><a></a>Instructions</a></h8>
+        </div>
     </footer>
 </html>
