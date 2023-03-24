@@ -8,16 +8,23 @@
     </header>
 
     <body>
-        <div id="moneyHolder">
+        <!--money counter-->
+        <div id="moneyHolder" class="modern roundedSquare">
             <p id="money">$0</p>
         </div>
 
-        <input type="button" id="mainButton" class="modern_square" onclick="buttonPressed();" value="Click me">
+        <!--money button-->
+        <input type="button" id="mainButton" class="modern round button" onclick="buttonPressed();" value="Click me">
+        
+
+        <!--upgrades-->
+        <br>
+        <input type="button" id="clickPower" class="modern square button" onclick="upgradePower()" value="Upgrade money earned by clicks by one. $10">
     </body>
 
     <footer>
         <div id="bottomInfo">
-            <h8><a></a>Instructions</a></h8>
+            <h8><a>Instructions</a></h8>
         </div>
     </footer>
 </html>

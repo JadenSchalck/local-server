@@ -1,4 +1,4 @@
-.modern_square {
+.modern {
     /*make it look like there is no border*/
     border: 1;
     border-color: rgb(100, 100, 100);
@@ -9,14 +9,24 @@
     font-size: 1rem;
     text-align: center;
     color: #fff;
-    border-radius: 100px;
     background-color: rgb(100, 100, 100);
 }
+.round {
+    border-radius: 100px;
+}
 
-.modern_square:hover {
+.square {
+    border-radius: 0px;
+}
+
+.roundedSquare {
+    border-radius: 5px;
+}
+
+.button:hover {
     filter: brightness(110%);
 }
 
-.modern_square:active {
+.button:active {
     filter: brightness(90%);
 }
