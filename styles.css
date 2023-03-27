@@ -1,8 +1,17 @@
 #moneyHolder {
     border: 0px;
     width: 20px;
+
+    /*center on page*/
     margin-left: auto;
     margin-right: auto;
+
+    /*center text in box*/
+    width:fit-content;
+}
+
+#money{
+    
 }
 
 #mainButton {
