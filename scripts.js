@@ -6,12 +6,8 @@ var power = 1
 function buttonPressed(){
     console.log("button pressed");
     money += power;
-    var text = document.getElementById("money").innerHTML;
-    console.log(document.getElementById("money").innerHTML);
-    console.log(text.substring(0, 9));
-    console.log(text.substring(9 + money.toString().length));
-    text = text.substring(0, 9) + 
-        (money + power) + text.substring(9 + money.toString().length);
+
+    document.getElementById("money").innerHTML = document.getElementById("money").innerHTML.substring(0, 1) + money;
 }
 
 function upgradePower(){
