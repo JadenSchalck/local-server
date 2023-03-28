@@ -2,7 +2,8 @@
 <html>
     <header>
         <title>Clicker game</title>
-        <script src="scripts.js"></script>
+        <script src="computation.js"></script>
+        <script src="update.js"></script>
         <link type="text/css" rel="stylesheet" href="styles.css">
         <link type="text/css" rel="stylesheet" href="modern.css">
     </header>
@@ -16,7 +17,6 @@
         <!--money button-->
         <input type="button" id="mainButton" class="modern round button" onclick="buttonPressed();" value="Click me">
         
-
         <!--upgrades-->
         <br>
         <input type="button" id="clickPower" class="modern square button" onclick="upgradePower()" value="Upgrade money earned by clicks by one. $10">
@@ -24,7 +24,9 @@
 
     <footer>
         <div id="bottomInfo">
-            <h8><a>Instructions</a></h8>
+            <h8>Instructions</h8>
+            <br>
+            <h8>Click buttons</h8>
         </div>
     </footer>
 </html>
