@@ -2,8 +2,8 @@
 <html>
     <header>
         <title>Clicker game</title>
-        <script src="computation.js"></script>
         <script src="update.js"></script>
+        <script src="computation.js"></script>
         <link type="text/css" rel="stylesheet" href="styles.css">
         <link type="text/css" rel="stylesheet" href="modern.css">
     </header>
@@ -14,12 +14,28 @@
             <p id="money">$0</p>
         </div>
 
-        <!--money button-->
-        <input type="button" id="mainButton" class="modern round button" onclick="buttonPressed();" value="Click me">
-        
-        <!--upgrades-->
         <br>
-        <input type="button" id="clickPower" class="modern square button" onclick="upgradePower()" value="Upgrade money earned by clicks by one. $10">
+
+        <!--money button-->
+        <input type="button" id="mainButton" class="modern round button" onclick="buttonPressed()" value="Click me">
+        <br>
+
+        <div id="boxHolder" class="float-container">
+            <!--left box-->
+            <div id="leftBox" class="modern roundedSquare float-child">
+                <!--upgrades-->
+                <input type="button" id="clickPower" class="modern square button" onclick="upgradePower()" value="Upgrade money earned by clicks by one. $10">
+            </div>
+
+            <!--right box-->
+            <div id=rightBox class="modern roundedSquare float-child">
+                <h3>The Cat Market</h3>
+                <p id="catsAmount">Your cats: 0</p>
+                <p id="catsPrice">Current price: $100</p>
+                <input type="button" id="buyCatButton" class="modern round button" onclick="buyCat()" value="Buy! Buy! Buy!">
+                <input type="button" id="sellCatButton" class="modern round button" onclick="sellCat()" value="Sell! Sell! Sell!">
+            </div>
+        </div>
     </body>
 
     <footer>
