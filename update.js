@@ -1,6 +1,8 @@
 function updateAll(){
     updateMoney();
     updatePower();
+    updateCatPrice();
+    updateCats();
 }
 
 function updateMoney(){
@@ -9,4 +11,14 @@ function updateMoney(){
 
 function updatePower(){
     document.getElementById("clickPower").value = document.getElementById("clickPower").value.substring(0, 40) + powerCost;
+}
+
+function updateCatPrice(){
+    console.log(document.getElementById("catsPrice").innerHTML);
+    document.getElementById("catsPrice").innerHTML = 
+    document.getElementById("catsPrice").innerHTML.substring(0, 16) + catCost;
+}
+
+function updateCats(){
+    document.getElementById("catsAmount").innerHTML = document.getElementById("catsAmount").innerHTML.substring(0, 11) + cats;
 }
