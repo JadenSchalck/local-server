@@ -31,13 +31,14 @@ function upgradePower(){
 }
 
 //cats
-var cats = 0
-var catCost = 100
+var cats = 0;
+var catCost = 100;
 
 //make cat price fluctuate. called once html is loaded.
 function changeCatPrice(){
-    console.log("Price is changing.")
-    catCost += Math.random() - .5;
+    //change cat cost based on whaen a cat was last bought
+    //TODO
+    catCost += (Math.random() * 5 - 2.5);
     catCost = Math.round(catCost * 100) / 100;
 
     if (catCost > 1000){
@@ -46,7 +47,8 @@ function changeCatPrice(){
         catCost = 0;
     }        updateCatPrice();
 }
-setInterval(changeCatPrice, 1000);
+//run func every 100 ms
+setInterval(changeCatPrice, 100);
 
 function buyCat(){
     if (money >= catCost){
