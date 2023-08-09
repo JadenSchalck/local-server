@@ -1,3 +1,3 @@
 # Clicker-project
-Click button earn money.
+Click button, earn money.
 Buy and sell cats on the Cat Market.
