@@ -8,31 +8,31 @@
         <link type="text/css" rel="stylesheet" href="modern.css">
     </header>
 
-    <body>
+    <body onload="updateAll()">
         <!--money counter-->
         <div id="moneyHolder" class="modern roundedSquare">
-            <p id="money">$0</p>
+            <p id="money">$</p>
         </div>
 
         <br>
 
         <!--money button-->
-        <input type="button" id="mainButton" class="modern round button" onclick="buttonPressed()" value="Click me">
+        <input type="button" id="mainButton" class="modern round button" onclick="buttonPressed()" value="Click me +">
         <br>
 
         <div id="boxHolder" class="float-container">
             <!--left box-->
             <div id="leftBox" class="modern roundedSquare float-child">
                 <!--upgrades-->
-                <input type="button" id="clickPower" class="modern square button" onclick="upgradePower()" value="Upgrade money earned by clicks by one. $10">
+                <input type="button" id="clickPower" class="modern square button" onclick="upgradePower()" value="Upgrade money earned by clicks by one. $">
             </div>
 
             <!--right box-->
             <div id=rightBox class="modern roundedSquare float-child">
                 <img src="cat.svg" alt="Picture of a cat." height="25%" width="25%"/>
                 <h3>The Cat Market</h3>
-                <p id="catsAmount">Your cats: 0</p>
-                <p id="catsPrice">Current price: $100</p>
+                <p id="catsAmount">Your cats: </p>
+                <p id="catsPrice">Current price: $</p>
                 <input type="button" id="buyCatButton" class="modern round button" onclick="buyCat()" value="Buy! Buy! Buy!">
                 <input type="button" id="sellCatButton" class="modern round button" onclick="sellCat()" value="Sell! Sell! Sell!">
             </div>
@@ -41,9 +41,10 @@
 
     <footer>
         <div id="bottomInfo">
-            <h8>Instructions</h8>
-            <br>
-            <h8>Click buttons</h8>
+            <h8>Instructions:</h8><br>
+            <h8>1. Click buttons</h8><br>
+            <h8>2. ???</h8><br>
+            <h8>3. Profit!</h8>
         </div>
     </footer>
 </html>

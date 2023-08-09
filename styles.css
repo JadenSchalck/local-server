@@ -22,6 +22,7 @@
 
 #mainButton {
     margin: 5px;
+    margin-left: 20px;
 }
 
 #boxHolder{
@@ -30,7 +31,7 @@
 }
 
 #leftBox {
-    background-color: pink;
+    background-color: rgb(52, 73, 40);
     margin: 10px;
     border: 5px;
     border-color: black;
@@ -40,7 +41,7 @@
 }
 
 #rightBox {
-    background-color: pink;
+    background-color: rgb(0, 0, 100);
     margin: 10px;
     border: 5px;
     border-color: black;
@@ -51,5 +52,5 @@
 
 /*footer*/
 #bottomInfo{
-    /*TODO: make lower*/
+    margin-top: 400px;
 }
