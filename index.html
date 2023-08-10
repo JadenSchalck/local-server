@@ -4,11 +4,16 @@
         <title>Clicker game</title>
         <script src="update.js"></script>
         <script src="computation.js"></script>
-        <link type="text/css" rel="stylesheet" href="styles.css">
         <link type="text/css" rel="stylesheet" href="modern.css">
+        <link type="text/css" rel="stylesheet" href="styles.css">
     </header>
 
     <body onload="updateAll()">
+        <!--settings icon-->
+        <div id="topBar" class="modern square">
+            <img id="settings_icon" class="button" src="gear.svg" alt="Settings" height="3%" width="3%" onclick="settings()"/>
+        </div>
+        
         <!--money counter-->
         <div id="moneyHolder" class="modern roundedSquare">
             <p id="money">$</p>
@@ -40,11 +45,20 @@
     </body>
 
     <footer>
-        <div id="bottomInfo">
-            <h8>Instructions:</h8><br>
-            <h8>1. Click buttons</h8><br>
-            <h8>2. ???</h8><br>
-            <h8>3. Profit!</h8>
+        <!--bottom area-->
+        <div id="bottomInfo" class="modern square float-container">
+            <!--instructions-->
+            <div id="instructions" class="float-child">
+                <h8>Instructions:</h8><br>
+                <h8>1. Click buttons</h8><br>
+                <h8>2. ???</h8><br>
+                <h8>3. Profit!</h8>
+            </div>
+
+            <!--Version-->
+            <div id="otherInfo">
+                <h8>Version 0.5.3</h8>
+            </div>
         </div>
     </footer>
 </html>

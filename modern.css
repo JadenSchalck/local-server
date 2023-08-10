@@ -25,6 +25,7 @@
 
 .button:hover {
     filter: brightness(110%);
+    cursor: pointer;
 }
 
 .button:active {
