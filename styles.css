@@ -6,20 +6,17 @@ body, html {
   margin: 0px;
 }
 
-.float-container {
-    padding: 20px;
-    height: 300px;
-}
-
-.float-child {
-    width: 50%;
-    padding: 20px;
-}
-
 /*body*/
 #topBar {
     text-align: left;
     padding: 0;
+}
+
+#title {
+    text-align: center;
+    float: right;
+    margin: 0;
+    width: 95%;
 }
 
 #moneyHolder {
@@ -39,7 +36,8 @@ body, html {
     margin-left: 20px;
 }
 
-#boxHolder{
+#boxHolder {
+    height: 300px;
     margin: 5px;
     padding: 5px;
 }
@@ -63,24 +61,19 @@ body, html {
 }
 
 /*footer*/
-#bottomInfo{
-    margin-top: 400px;
+#bottomInfo {
+    line-height: normal;
+    text-align: left;
+    margin-top: 300px;
+    height: 100px;
 }
 
 #instructions {
-    margin: 10px;
-    border: 5px;
-    padding: 10px;
-    width: fit-content;
     float: left;
-    line-height: normal;
-    text-align: left;
+    width: fit-content;
 }
 
 #otherInfo {
-    margin: 10px;
-    border: 5px;
-    padding: 10px;
-    width: fit-content;
     float: right;
+    width: fit-content;
 }
