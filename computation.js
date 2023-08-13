@@ -6,7 +6,7 @@ function hide(id) {
 }
 
 //settings
-function settings() {
+function settingsToggle() {
     var settingsMenu = document.getElementById("settingsBox");
     console.log("Settings pressed");
     if (settingsMenu.style.display === "none") {
@@ -14,6 +14,13 @@ function settings() {
       } else {
         settingsMenu.style.display = "none";
       }
+}
+
+var saveCode = "";
+function save() {
+    //square brackets around each topic. Comma seperaed numbers.
+    saveCode = "".concat("[", Date.now(), "],[", money, "],[", power, ",", powerCost, "],[", cats, ",", catCost, "]");
+    updateSettings();
 }
 
 //money
