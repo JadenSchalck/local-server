@@ -6,7 +6,6 @@ function updateAll(){
     updateCats();
 }
 
-
 //unused
 function updateMainButton(){
     document.getElementById("mainButton").value = document.getElementById("mainButton").value.substring(0, 10) + power.toFixed(2);
@@ -22,7 +21,7 @@ function updatePower(){
 }
 
 function updateCatPrice(){
-    console.log(document.getElementById("catsPrice").innerHTML);
+    //console.log(document.getElementById("catsPrice").innerHTML);
     document.getElementById("catsPrice").innerHTML = 
     document.getElementById("catsPrice").innerHTML.substring(0, 16) + catCost;
 }

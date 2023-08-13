@@ -8,13 +8,19 @@
         <link type="text/css" rel="stylesheet" href="styles.css">
     </header>
 
-    <body onload="updateAll()">
-        <!--settings icon-->
+    <body onload="updateAll(); hide('settingsBox')">
+        <!--top bar-->
         <div id="topBar" class="modern square float-container">
             <img id="settings_icon" class="button float-child" src="gear.svg" alt="Settings" height="3%" width="3%" onclick="settings()"/>
             <h2 id="title" class="float-child">Jaden's Clicker Game</h2>
         </div>
         
+        <!--settings menu-->
+        <div id="settingsBox" class="modern round">
+            <!--TODO-->
+            <p>Settings</p>
+        </div>
+
         <!--money counter-->
         <div id="moneyHolder" class="modern roundedSquare">
             <p id="money">$</p>
