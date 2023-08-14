@@ -16,7 +16,15 @@ body, html {
     text-align: center;
     float: right;
     margin: 0;
-    width: 95%;
+    width: 97%;
+}
+
+#settingsBox {
+    width: fit-content;
+    padding: 10%;
+    padding-top: 0%;
+    margin-left: 25%;
+    margin-top: 10px;
 }
 
 #moneyHolder {
