@@ -1,14 +1,9 @@
 function updateAll(){
-    //updateSettings(); does not need updating
     //updateMainButton();
     updateMoney();
     updatePower();
     updateCatPrice();
     updateCats();
-}
-
-function updateSettings() {
-    document.getElementById("saveCodeOutput").innerHTML = saveCode;
 }
 
 //unused

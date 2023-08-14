@@ -16,11 +16,22 @@ function settingsToggle() {
       }
 }
 
+//Saves are just JSON
 var saveCode = "";
 function save() {
-    //square brackets around each topic. Comma seperaed numbers.
-    saveCode = "".concat("[", Date.now(), "],[", money, "],[", power, ",", powerCost, "],[", cats, ",", catCost, "]");
+    saveCode = JSON.stringify({date: Date.now(), money: money, power: {power: power, powerCost: powerCost}, cats: {cats: cats, catCost: catCost}});
     updateSettings();
+}
+
+function load() {
+    saveCode = JSON.parse(document.getElementById("loadField").value);
+    var timeElapsed = Date.now() - saveCode["date"];//might be used in the future
+    money = saveCode["money"];
+    power = saveCode["power"]["power"];
+    powerCost = saveCode["power"]["powerCost"];
+    cats = saveCode["cats"]["cats"];
+    catCost = saveCode["cats"]["catCost"];
+    updateAll();
 }
 
 //money
