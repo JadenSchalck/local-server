@@ -6,6 +6,12 @@ function updateAll(){
     updateCats();
 }
 
+
+function updateSettings() {
+    document.getElementById("saveCodeOutput").innerHTML = saveCode;
+    console.log(saveCode);
+}
+
 //unused
 function updateMainButton() {
     document.getElementById("mainButton").value = document.getElementById("mainButton").value.substring(0, 10) + power.toFixed(2);
