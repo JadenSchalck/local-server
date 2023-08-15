@@ -1,12 +1,31 @@
-.float-container {
-    padding: 20px;
-    height: 300px;
+/*removes padding along the edge of the screen*/
+body, html {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
 }
 
-.float-child {
-    width: 50%;
-    padding: 20px;
-}  
+/*body*/
+#topBar {
+    text-align: left;
+    padding: 0;
+}
+
+#title {
+    text-align: center;
+    float: right;
+    margin: 0;
+    width: 97%;
+}
+
+#settingsBox {
+    width: fit-content;
+    padding: 10%;
+    padding-top: 0%;
+    margin-left: 25%;
+    margin-top: 10px;
+}
 
 #moneyHolder {
     border: 0px;
@@ -25,7 +44,8 @@
     margin-left: 20px;
 }
 
-#boxHolder{
+#boxHolder {
+    height: 300px;
     margin: 5px;
     padding: 5px;
 }
@@ -34,7 +54,6 @@
     background-color: rgb(52, 73, 40);
     margin: 10px;
     border: 5px;
-    border-color: black;
     padding: 10px;
     width: fit-content;
     float: left;
@@ -44,13 +63,25 @@
     background-color: rgb(0, 0, 100);
     margin: 10px;
     border: 5px;
-    border-color: black;
     padding: 10px;
     width: fit-content;
     float: right;
 }
 
 /*footer*/
-#bottomInfo{
-    margin-top: 400px;
+#bottomInfo {
+    line-height: normal;
+    text-align: left;
+    margin-top: 300px;
+    height: 100px;
+}
+
+#instructions {
+    float: left;
+    width: fit-content;
+}
+
+#otherInfo {
+    float: right;
+    width: fit-content;
 }
