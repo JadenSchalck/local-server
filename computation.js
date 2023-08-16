@@ -130,6 +130,7 @@ var reduceFrictionCost = 50;
 function spinGorilla() {
     gorillaSpinMult++;
     updateRotationSpeed();
+    updateGorillaVideo();
 }
 
 function reduceFriction(){
