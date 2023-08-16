@@ -71,7 +71,7 @@ body, html {
 
 /*gorilla*/
 #spinningGorilla {
-    background-color: brown;
+    background-color: rgb(115, 70, 30);
     text-align: left;
     margin-top: 10px;
     height: 300px;
