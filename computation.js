@@ -19,18 +19,32 @@ function settingsToggle() {
 //Saves are just JSON
 var saveCode = "";
 function save() {
-    saveCode = JSON.stringify({date: Date.now(), money: money, power: {power: power, powerCost: powerCost}, cats: {cats: cats, catCost: catCost}});
+    saveCode = JSON.stringify({
+        date: Date.now(), money: money, 
+        power: {power: power, powerCost: powerCost}, 
+        cats: {cats: cats, catCost: catCost}, 
+        gorilla: {gorillaSpinMult: gorillaSpinMult, frictionPerSecond: frictionPerSecond, reduceFrictionCost: reduceFrictionCost}
+    });
     updateSettings();
 }
 
 function load() {
     saveCode = JSON.parse(document.getElementById("loadField").value);
-    var timeElapsed = Date.now() - saveCode["date"];//might be used in the future
-    money = saveCode["money"];
-    power = saveCode["power"]["power"];
-    powerCost = saveCode["power"]["powerCost"];
-    cats = saveCode["cats"]["cats"];
-    catCost = saveCode["cats"]["catCost"];
+    
+    if (saveCode["date"] >= 0) {
+        var timeElapsed = Date.now() - saveCode["date"];//might be used in the future
+    }
+    if (saveCode["money"] >= 0) {money = saveCode["money"];}
+
+    if (saveCode["power"]["power"] >= 0) {power = saveCode["power"]["power"];}
+    if (saveCode["power"]["powerCost"] >= 0) {powerCost = saveCode["power"]["powerCost"];}
+
+    if (saveCode["cats"]["cats"] >= 0) {cats = saveCode["cats"]["cats"];}
+    if (saveCode["cats"]["catCost"] >= 0) {catCost = saveCode["cats"]["catCost"];}
+
+    if (saveCode["gorilla"]["gorillaSpinMult"] >= 0) {gorillaSpinMult = saveCode["gorilla"]["gorillaSpinMult"];}
+    if (saveCode["gorilla"]["frictionPerSecond"] >= 0) {frictionPerSecond = saveCode["gorilla"]["frictionPerSecond"];}
+    if (saveCode["gorilla"]["reduceFrictionCost"] >= 0) {reduceFrictionCost = saveCode["gorilla"]["reduceFrictionCost"];}
     updateAll();
 }
 
