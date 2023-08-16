@@ -107,3 +107,48 @@ function sellCat() {
         alert("You don't have any cats to sell!");
     }
 }
+
+//monke
+
+var gorillaSpinMult = 0;
+var frictionPerSecond = .9;
+var reduceFrictionCost = 50;
+function spinGorilla() {
+    gorillaSpinMult++;
+    updateRotationSpeed();
+}
+
+function reduceFriction(){
+    if (money >= reduceFrictionCost) {
+        money -= reduceFrictionCost;
+        frictionPerSecond *= .9;
+        reduceFrictionCost += 50;
+
+        if (frictionPerSecond <= 0) {
+            frictionPerSecond = Number.MIN_VALUE;
+        }
+
+        updateReduceFrictionButton();
+        updateFrictionPerSecond();
+    } else {
+        alert("Too expensive!");
+    }
+}
+
+function changeGorillaSpinMult() {
+    money += gorillaSpinMult;
+
+    if (gorillaSpinMult > 0) {
+        gorillaSpinMult *= 1 - frictionPerSecond;
+    }
+    
+    if (gorillaSpinMult <= .1) {
+        gorillaSpinMult = 0;
+    }
+
+    //update relevant variables
+    updateGorillaVideo();
+    updateMoney();
+    updateRotationSpeed();
+}
+setInterval(changeGorillaSpinMult, 1000);
