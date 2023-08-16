@@ -56,16 +56,19 @@
             </div>
         </div>
 
+        <br>
+
         <!--spining gorilla-->
-        <div id="spinningGorilla">
-            <p id="frictionPerSecond">Friction/second: </p>
-            <p id="rotationSpeed">Rotation speed: </p>
-            <input type="button" id="gorillaSpinButton" class="modern round button" onclick="spinGorilla()" value="Spin">
-            <input type="button" id="reduceFrictionButton" class="modern round button" onclick="reduceFriction()" value="Reduce friction by 10%. $">
+        <div id="spinningGorilla" class="modern roundedSquare float-container">
+            <div id="gorillaButtons" class="float-child">
+                <p id="frictionPerSecond">Friction/second: </p>
+                <p id="rotationSpeed">Rotation speed: </p>
+                <input type="button" id="gorillaSpinButton" class="modern round button" onclick="spinGorilla()" value="Spin">                    <input type="button" id="reduceFrictionButton" class="modern round button" onclick="reduceFriction()" value="Reduce friction by 10%. $">
+            </div>
             <!-- MP4 is from tenor.com find it at https://tenor.com/view/gif-gif-19493608 -->
-            <video id="gorillaVideo" muted autoplay loop width="400" height="400">
-                <source src="gorilla-spin.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            <video id="gorillaVideo" muted autoplay loop width="600px" height="100%" class="float-child">
+                    <source src="gorilla-spin.mp4" type="video/mp4">
+                Your browser does not support the video tag.
             </video>
         </div>
     </body>
@@ -83,7 +86,7 @@
 
             <!--Version info-->
             <div id="otherInfo">
-                <h8>Version 0.7.2</h8><br>
+                <h8>Version 0.7.5</h8><br>
                 <h8>Last updated on Aug 16, 2023</h8>
             </div>
         </div>
