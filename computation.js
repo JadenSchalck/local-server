@@ -28,6 +28,15 @@ function saveAsCookie() {
     document.cookie = "JSON=" + createSaveCode();
 }
 
+//autosave
+function autoSave() {
+    if (document.getElementById("autoSaveCheckbox").checked) {
+        saveAsCookie();
+    }
+}
+//run func every 10s
+setInterval(autoSave, 10000);
+
 //helper
 function createSaveCode() {
     return JSON.stringify({
