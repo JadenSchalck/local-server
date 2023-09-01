@@ -23,9 +23,10 @@ function save() {
     updateSettings();
 }
 
-//cookie save
+//cookie save lasts for 1 year
 function saveAsCookie() {
-    document.cookie = "JSON=" + createSaveCode();
+    const ONE_YEAR = 31_556_952_000;//ms
+    document.cookie = "JSON=" + createSaveCode() + " ;expires=" + new Date(Date.now() + ONE_YEAR).toUTCString() + " ;domain=192.168.3.129";
 }
 
 //autosave
@@ -73,6 +74,7 @@ function load(save) {
 }
 
 function loadFromCookie() {
+    console.log(document.cookie);
     load(JSON.parse(document.cookie.split("=")[1]));
 }
 
