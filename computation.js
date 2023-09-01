@@ -19,17 +19,41 @@ function settingsToggle() {
 //Saves are just JSON
 var saveCode = "";
 function save() {
-    saveCode = JSON.stringify({
+    saveCode = createSaveCode();
+    updateSettings();
+}
+
+//cookie save
+function saveAsCookie() {
+    document.cookie = "JSON=" + createSaveCode();
+}
+
+//autosave
+function autoSave() {
+    if (document.getElementById("autoSaveCheckbox").checked) {
+        saveAsCookie();
+    }
+}
+//run func every 10s
+setInterval(autoSave, 10000);
+
+//helper
+function createSaveCode() {
+    return JSON.stringify({
         date: Date.now(), money: money, 
         power: {power: power, powerCost: powerCost}, 
         cats: {cats: cats, catCost: catCost}, 
         gorilla: {gorillaSpinMult: gorillaSpinMult, frictionPerSecond: frictionPerSecond, reduceFrictionCost: reduceFrictionCost}
     });
-    updateSettings();
 }
 
-function load() {
-    saveCode = JSON.parse(document.getElementById("loadField").value);
+//load
+function load(save) {
+    if (save === undefined) {
+        saveCode = JSON.parse(document.getElementById("loadField").value);
+    } else {
+        saveCode = save;
+    }
     
     if (saveCode["date"] >= 0) {
         var timeElapsed = Date.now() - saveCode["date"];//might be used in the future
@@ -46,6 +70,10 @@ function load() {
     if (saveCode["gorilla"]["frictionPerSecond"] >= 0) {frictionPerSecond = saveCode["gorilla"]["frictionPerSecond"];}
     if (saveCode["gorilla"]["reduceFrictionCost"] >= 0) {reduceFrictionCost = saveCode["gorilla"]["reduceFrictionCost"];}
     updateAll();
+}
+
+function loadFromCookie() {
+    load(JSON.parse(document.cookie.split("=")[1]));
 }
 
 //money

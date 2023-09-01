@@ -8,7 +8,7 @@
         <link type="text/css" rel="stylesheet" href="styles.css">
     </header>
 
-    <body onload="updateAll(); hide('settingsBox')">
+    <body onload="updateAll(); hide('settingsBox'); loadFromCookie();">
         <!--top bar-->
         <div id="topBar" class="modern square float-container">
             <img id="settings_icon" class="button float-child" src="gear.svg" alt="Settings" height="3%" width="3%" onclick="settingsToggle()"/>
@@ -19,12 +19,19 @@
         <div id="settingsBox" class="modern round">
             <h3>Settings</h3>
             <!--save-->
-            <input type="button" id="saveButton" class="modern round border button" onclick="save()" value="Save">
+            <p>Auto cookie save every 10 seconds</p>
+            <label id="autoSaveSwitchLabel" class="switch">
+                <input id="autoSaveCheckbox" type="checkbox">
+                <span class="slider round"></span>
+            </label><br>
+            <input type="button" id="saveCodeButton" class="modern round border button" onclick="save()" value="Save as code">
+            <input type="button" id="saveCookieButton" class="modern round border button" onclick="saveAsCookie()" value="Save as cookie">
             <p id="saveCodeOutput">Your save code will appear on this line. Copy it somewhere safe.</p>
 
             <!--load-->
             <input type="text" id="loadField" class="modern square" placeholder="Enter save data here">
-            <input type="button" id="submitLoadButton" class="modern round border button" onclick="load()" value="Load">
+            <input type="button" id="submitLoadCodeButton" class="modern round border button" onclick="load()" value="Load from code">
+            <input type="button" id="LoadCookieButton" class="modern round border button" onclick="loadFromCookie()" value="Load from cookie">
         </div>
 
         <!--money counter-->
@@ -86,8 +93,8 @@
 
             <!--Version info-->
             <div id="otherInfo">
-                <h8>Version 0.7.6</h8><br>
-                <h8>Last updated on Aug 16, 2023</h8>
+                <h8>Version 0.8.6</h8><br>
+                <h8>Last updated on Sep 1, 2023</h8>
             </div>
         </div>
     </footer>
