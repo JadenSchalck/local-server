@@ -19,12 +19,14 @@
         <div id="settingsBox" class="modern round">
             <h3>Settings</h3>
             <!--save-->
-            <input type="button" id="saveButton" class="modern round border button" onclick="save()" value="Save">
+            <input type="button" id="saveCodeButton" class="modern round border button" onclick="save()" value="Save as code">
+            <input type="button" id="saveCookieButton" class="modern round border button" onclick="saveAsCookie()" value="Save as cookie">
             <p id="saveCodeOutput">Your save code will appear on this line. Copy it somewhere safe.</p>
 
             <!--load-->
             <input type="text" id="loadField" class="modern square" placeholder="Enter save data here">
-            <input type="button" id="submitLoadButton" class="modern round border button" onclick="load()" value="Load">
+            <input type="button" id="submitLoadCodeButton" class="modern round border button" onclick="load()" value="Load from code">
+            <input type="button" id="LoadCookieButton" class="modern round border button" onclick="loadFromCookie()" value="Load from cookie">
         </div>
 
         <!--money counter-->
@@ -86,8 +88,8 @@
 
             <!--Version info-->
             <div id="otherInfo">
-                <h8>Version 0.7.6</h8><br>
-                <h8>Last updated on Aug 16, 2023</h8>
+                <h8>Version 0.8.0</h8><br>
+                <h8>Last updated on Aug 31, 2023</h8>
             </div>
         </div>
     </footer>
