@@ -1,3 +1,11 @@
+/*removes padding along the edge of the screen*/
+body, html {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
 .modern {
     /*make it look like there is no border*/
     border: 1;
