@@ -1,13 +1,3 @@
-#topBar {
-    height: auto;
-    width: 100%;
-}
-
-#footerBox {
-    height: auto;
-    width: 100%;
-}
-
 .footerText {
     float: left;
     margin-left: 15%;
@@ -17,4 +7,21 @@
 /*centers text because html tecnically removed <center>*/
 .centered {
     text-align: center;
+}
+
+#description {
+    width: 40%;
+    line-height: 1.5;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+#topBar {
+    height: auto;
+    width: 100%;
+}
+
+#footerBox {
+    height: auto;
+    width: 100%;
 }
