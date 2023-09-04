@@ -16,6 +16,12 @@
     margin-top: 50px;
 }
 
+#biography {
+    width: 90%;
+    margin-left: 1%;
+    line-height: 1.5;
+}
+
 #topBar {
     height: auto;
     width: 100%;
