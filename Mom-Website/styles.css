@@ -1,42 +1,20 @@
-:root{
-    /*Make global vals*/
-    /*white*/
-    --BGRed: 255;
-    --BGGreen: 255;
-    --BGBlue: 255;
-    /*mint*/
-    --AccentRed: 130;
-    --AccentGreen: 240;
-    --AccentBlue: 160;
-}
-
-.STDColorTheme{
-    background-color: rgb(var(--BGRed), var(--BGGreen), var(--BGBlue));
-    color: black;
-}
-
-.AccentColorTheme{
-    background-color: rgb(var(--AccentRed), var(--AccentGreen), var(--AccentBlue));
-    color: black;
-}
-
-.topBar{
+#topBar {
     height: auto;
     width: 100%;
 }
 
-.footerBox{
+#footerBox {
     height: auto;
     width: 100%;
+}
+
+.footerText {
+    float: left;
+    margin-left: 15%;
+    color: #000;
 }
 
 /*centers text because html tecnically removed <center>*/
-.centered{
+.centered {
     text-align: center;
-}
-
-/*prevents newlines*/
-.inline{
-    /*display: inline;*/
-    white-space:nowrap;
 }
