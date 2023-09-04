@@ -25,6 +25,12 @@
 #topBar {
     height: auto;
     width: 100%;
+    overflow: hidden;
+}
+
+#picAndTitleLink {
+    text-decoration: dashed;
+    color: #000;
 }
 
 #footerBox {
