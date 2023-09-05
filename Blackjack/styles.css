@@ -1,0 +1,55 @@
+/*body*/
+#topBar {
+    text-align: left;
+    padding: 0;
+    height: 100px;
+}
+
+#title {
+    text-align: center;
+    float: right;
+    margin: 0;
+    width: 97%;
+}
+
+/*settings*/
+#settingsBox {
+    width: fit-content;
+    padding: 10%;
+    padding-top: 0%;
+    margin-left: 15%;
+    margin-top: 10px;
+}
+
+#moneyHolder {
+    border: 0px;
+    width: 20px;
+
+    /*center on page*/
+    margin-left: auto;
+    margin-right: auto;
+
+    /*center text in box*/
+    width:fit-content;
+}
+
+#dealerHand {
+    margin: 0;
+    font-size: 1000%;
+    font-weight: 100;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+#playerHand {
+    margin-top: 5%;
+    margin-bottom: 1%;
+    font-size: 1000%;
+    font-weight: 100;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+#buttonHolder {
+    margin-left: 45%;
+}
