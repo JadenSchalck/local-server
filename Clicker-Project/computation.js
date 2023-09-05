@@ -78,7 +78,7 @@ function loadFromCookie() {
     console.log(document.cookie);
     money = document.cookie.split("money=")[1].split(" ;")[0];
     saveCode = JSON.parse(document.cookie.split("Clicker-ProjectJSON=")[1].split("}}")[0] + "}}");
-    saveCode["money"] = money;
+    saveCode["money"] = parseFloat(money);
     load(saveCode);
 }
 
