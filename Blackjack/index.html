@@ -1,36 +1,27 @@
 <!DOCTYPE html>
 <html>
     <header>
-        <title>Clicker game</title>
+        <title>Blackjack</title>
         <script src="update.js"></script>
         <script src="computation.js"></script>
         <link type="text/css" rel="stylesheet" href="../modern.css">
         <link type="text/css" rel="stylesheet" href="styles.css">
     </header>
-
-    <body onload="updateAll(); hide('settingsBox'); loadFromCookie();">
+    
+    <body onload="hide('settingsBox'); loadFromCookie(); updateAll();">
         <!--top bar-->
         <div id="topBar" class="modern square float-container">
             <img id="settings_icon" class="button float-child" src="gear.svg" alt="Settings" height="3%" width="3%" onclick="settingsToggle()"/>
-            <h2 id="title" class="float-child">Jaden's Clicker Game</h2>
+            <h2 id="title" class="float-child">Blackjack</h2>
         </div>
         
         <!--settings menu-->
         <div id="settingsBox" class="modern round">
             <h3>Settings</h3>
             <!--save-->
-            <p>Auto cookie save every 10 seconds</p>
-            <label id="autoSaveSwitchLabel" class="switch">
-                <input id="autoSaveCheckbox" type="checkbox">
-                <span class="slider round"></span>
-            </label><br>
-            <input type="button" id="saveCodeButton" class="modern round border button" onclick="save()" value="Save as code">
             <input type="button" id="saveCookieButton" class="modern round border button" onclick="saveAsCookie()" value="Save as cookie">
-            <p id="saveCodeOutput">Your save code will appear on this line. Copy it somewhere safe.</p>
 
             <!--load-->
-            <input type="text" id="loadField" class="modern square" placeholder="Enter save data here">
-            <input type="button" id="submitLoadCodeButton" class="modern round border button" onclick="load()" value="Load from code">
             <input type="button" id="LoadCookieButton" class="modern round border button" onclick="loadFromCookie()" value="Load from cookie">
         </div>
 
@@ -39,63 +30,26 @@
             <p id="money">$</p>
         </div>
 
-        <br>
+        <!--Bet-->
+        <input type="text" id="betAmount" class="modern square" placeholder="Enter bet here">
+        <input type="button" id="submitBetButton" class="modern round border button" onclick="submitBet()" value="Bet">
+        <div id="connotAffordText"></div>
 
-        <!--money button-->
-        <input type="button" id="mainButton" class="modern round button" onclick="buttonPressed()" value="Click me +$">
-        <br>
-
-        <div id="boxHolder" class="float-container">
-            <!--left box-->
-            <div id="leftBox" class="modern roundedSquare float-child">
-                <!--upgrades-->
-                <input type="button" id="clickPower" class="modern square button" onclick="upgradePower()" value="Upgrade money earned by clicks by one. $">
-            </div>
-
-            <!--right box-->
-            <div id=rightBox class="modern roundedSquare float-child">
-                <img src="cat.svg" alt="Picture of a cat." height="25%" width="25%"/>
-                <h3>The Cat Market</h3>
-                <p id="catsAmount">Your cats: </p>
-                <p id="catsPrice">Current price: $</p>
-                <input type="button" id="buyCatButton" class="modern round button" onclick="buyCat()" value="Buy! Buy! Buy!">
-                <input type="button" id="sellCatButton" class="modern round button" onclick="sellCat()" value="Sell! Sell! Sell!">
-            </div>
-        </div>
-
-        <br>
-
-        <!--spining gorilla-->
-        <div id="spinningGorilla" class="modern roundedSquare float-container">
-            <div id="gorillaButtons" class="float-child">
-                <p id="frictionPerSecond">Friction/second: </p>
-                <p id="rotationSpeed">Rotation speed: </p>
-                <input type="button" id="gorillaSpinButton" class="modern round button" onclick="spinGorilla()" value="Spin">                    <input type="button" id="reduceFrictionButton" class="modern round button" onclick="reduceFriction()" value="Reduce friction by 10%. $">
-            </div>
-            <!-- MP4 is from tenor.com find it at https://tenor.com/view/gif-gif-19493608 -->
-            <video id="gorillaVideo" muted autoplay loop width="600px" height="100%" class="float-child">
-                    <source src="gorilla-spin.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+        <!--play field-->
+        <h1 id="dealerHand">Dealer hand</h1>
+        <h1 id="playerHand">Player hand</h1>
+        <input type="button" id="hitButton" class="modern round button" onclick="hit()" value="Hit">
+        <input type="button" id="standButton" class="modern round button" onclick="stand()" value="Stand">
+        <p id="result"></p>
     </body>
 
     <footer>
         <!--bottom area-->
         <div id="bottomInfo" class="modern square float-container">
-            <!--instructions-->
-            <div id="instructions" class="float-child">
-                <h8>Instructions:</h8><br>
-                <h8>1. Click buttons</h8><br>
-                <h8>2. ???</h8><br>
-                <h8>3. Profit!</h8>
-            </div>
-
             <!--Version info-->
             <div id="otherInfo">
-                <h8>Version 0.8.11</h8><br>
+                <h8>Version 1.0.2</h8><br>
                 <h8>Last updated on Sep 5, 2023</h8>
             </div>
         </div>
     </footer>
-</html>

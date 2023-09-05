@@ -1,5 +1,3 @@
-//3456789A123456789B123456789C123456789D123456789E123456789F123456789G123456789H
-
 //hide
 function hide(id) {
     document.getElementById(id).style.display = "none";
@@ -16,185 +14,149 @@ function settingsToggle() {
       }
 }
 
-//Saves are just JSON
-var saveCode = "";
-function save() {
-    saveCode = createSaveCode();
-    updateSettings();
-}
-
 //cookie save lasts for 1 year
 function saveAsCookie() {
     const ONE_YEAR = 31_556_952_000;//ms
-    document.cookie = "Clicker-ProjectJSON=" + createSaveCode() + " ;expires=" + new Date(Date.now() + ONE_YEAR).toUTCString() + " ;domain=192.168.3.129";
-    document.cookie = "money=" + money + " ;expires=" + new Date(Date.now() + ONE_YEAR).toUTCString() + " ;domain=192.168.3.129 ;path=/";
-}
-
-//autosave
-function autoSave() {
-    if (document.getElementById("autoSaveCheckbox").checked) {
-        saveAsCookie();
-    }
-}
-//run func every 10s
-setInterval(autoSave, 10000);
-
-//helper
-function createSaveCode() {
-    return JSON.stringify({
-        date: Date.now(), money: money, 
-        power: {power: power, powerCost: powerCost}, 
-        cats: {cats: cats, catCost: catCost}, 
-        gorilla: {gorillaSpinMult: gorillaSpinMult, frictionPerSecond: frictionPerSecond, reduceFrictionCost: reduceFrictionCost}
-    });
-}
-
-//load
-function load(save) {
-    if (save === undefined) {
-        saveCode = JSON.parse(document.getElementById("loadField").value);
-    } else {
-        saveCode = save;
-    }
-    
-    if (saveCode["date"] >= 0) {
-        var timeElapsed = Date.now() - saveCode["date"];//might be used in the future
-    }
-    if (saveCode["money"] >= 0) {money = saveCode["money"];}
-
-    if (saveCode["power"]["power"] >= 0) {power = saveCode["power"]["power"];}
-    if (saveCode["power"]["powerCost"] >= 0) {powerCost = saveCode["power"]["powerCost"];}
-
-    if (saveCode["cats"]["cats"] >= 0) {cats = saveCode["cats"]["cats"];}
-    if (saveCode["cats"]["catCost"] >= 0) {catCost = saveCode["cats"]["catCost"];}
-
-    if (saveCode["gorilla"]["gorillaSpinMult"] >= 0) {gorillaSpinMult = saveCode["gorilla"]["gorillaSpinMult"];}
-    if (saveCode["gorilla"]["frictionPerSecond"] >= 0) {frictionPerSecond = saveCode["gorilla"]["frictionPerSecond"];}
-    if (saveCode["gorilla"]["reduceFrictionCost"] >= 0) {reduceFrictionCost = saveCode["gorilla"]["reduceFrictionCost"];}
-    updateAll();
+    document.cookie = "money=" + money + " ;expires=" + new Date(Date.now() + ONE_YEAR).toUTCString() + " ;domain=192.168.3.129";
 }
 
 function loadFromCookie() {
     console.log(document.cookie);
-    load(JSON.parse(document.cookie.split("Clicker-ProjectJSON=")[1].split("}}")[0] + "}}"));
+    money = parseFloat(document.cookie.split("money=")[1].split(" ")[0]);
 }
 
-//money
+var bet = 0;
 var money = 0;
 
-//power
-var power = 1;
-var powerCost = 10;
-var powerCostScaling = 5;
+function submitBet() {
+    bet = parseFloat(document.getElementById("betAmount").value);
 
-//increase the amount of money when clicked
-function buttonPressed() {
-    console.log("Main button pressed");
-    
-    money += power;
-    updateMoney();
-}
-
-//upgrade power
-function upgradePower() {
-    console.log("Power upgrade button pressed");
-
-    if (money >= powerCost) {
-        money -= powerCost;
-        powerCost += powerCostScaling;
-        power++;
-        updateMoney();
-        updatePower();
+    if (money < bet) {
+        document.getElementById("connotAffordText").innerHTML = "Cannot afford that!";
     } else {
-        alert("That's too expenive!");
-    }
-}
-
-//cats
-var cats = 0;
-var catCost = 100;
-
-//make cat price fluctuate. called once html is loaded.
-function changeCatPrice() {
-    //change cat cost based on whaen a cat was last bought
-    //TODO
-    catCost += (Math.random() * 5 - 2.5);
-    catCost = Math.round(catCost * 100) / 100;
-
-    if (catCost > 1000) {
-        catCost = 1000;
-    } else if (catCost < 0) {
-        catCost = 0;
-    }
-    updateCatPrice();
-}
-//run func every 100 ms
-setInterval(changeCatPrice, 100);
-
-function buyCat() {
-    if (money >= catCost) {
-        money -= catCost;
-        cats++;
+        document.getElementById("connotAffordText").innerHTML = "";
+        updateResult("");
+        money -= bet;
         updateMoney();
-        updateCats();
-    } else {
-        alert("That's too expenive!");
+        startGame();
     }
 }
 
-function sellCat() {
-    if (cats > 0) {
-        cats--;
-        money += catCost;
-        updateMoney();
-        updateCats();
-    } else {
-        alert("You don't have any cats to sell!");
+//game stuff
+/*var cards = [
+    "🂡","🂢","🂣","🂤","🂥","🂦","🂧","🂨","🂩","🂪","🂫","🂭","🂮",
+    "🂱","🂲","🂳","🂴","🂵","🂶","🂷","🂸","🂹","🂺","🂻","🂽","🂾",
+    "🃁","🃂","🃃","🃄","🃅","🃆","🃇","🃈","🃉","🃊","🃋","🃍","🃎",
+    "🃑","🃒","🃓","🃔","🃕","🃖","🃗","🃘","🃙","🃚","🃛","🃝","🃞"
+]; websites did not like this*/
+var cards = [
+    "&#x1F0A1","&#x1F0A2","&#x1F0A3","&#x1F0A4","&#x1F0A5","&#x1F0A6","&#x1F0A7","&#x1F0A8","&#x1F0A9","&#x1F0AA","&#x1F0AB","&#x1F0AD","&#x1F0AE",
+    "&#x1F0B1","&#x1F0B2","&#x1F0B3","&#x1F0B4","&#x1F0B5","&#x1F0B6","&#x1F0B7","&#x1F0B8","&#x1F0B9","&#x1F0BA","&#x1F0BB","&#x1F0BD","&#x1F0BE",
+    "&#x1F0C1","&#x1F0C2","&#x1F0C3","&#x1F0C4","&#x1F0C5","&#x1F0C6","&#x1F0C7","&#x1F0C8","&#x1F0C9","&#x1F0CA","&#x1F0CB","&#x1F0CD","&#x1F0CE",
+    "&#x1F0D1","&#x1F0D2","&#x1F0D3","&#x1F0D4","&#x1F0D5","&#x1F0D6","&#x1F0D7","&#x1F0D8","&#x1F0D9","&#x1F0DA","&#x1F0DB","&#x1F0DD","&#x1F0DE",
+]
+var dealerHand = [];
+var playerHand = [];
+function startGame() {
+    //deal cards
+    dealerHand = [Math.round(Math.random() * 51), Math.round(Math.random() * 51)];
+    playerHand = [Math.round(Math.random() * 51), Math.round(Math.random() * 51)];
+    document.getElementById("dealerHand").innerHTML = "&#x1F0A0" + cards[dealerHand[1]];
+    document.getElementById("playerHand").innerHTML = cards[playerHand[0]] + cards[playerHand[1]];
+
+    //if player blackjack
+    if (playerHand[0] % 13 === 0 && playerHand[1] >= 9 && playerHand[1] % 13 >= 9 || playerHand[1] % 13 === 0 && playerHand[0] >= 9 && playerHand[0] % 13 >= 9) {
+        //reveal dealer card
+        document.getElementById("dealerHand").innerHTML = cards[dealerHand[0]] + cards[dealerHand[1]];
+        
+        //if dealer blackjack
+        if (dealerHand[0] % 13 === 0 && dealerHand[0] >= 9 && dealerHand[1] % 13 >= 9 || dealerHand[1] % 13 === 0 && dealerHand[0] >= 9 && dealerHand[0] % 13 >= 9) {
+            updateResult("Push");
+            money += bet;
+            updateMoney();
+        } else {
+            updateResult("Blackjack 2.5x");
+            money += bet * 2.5;
+            updateMoney();
+        }
+    }
+
+    //if dealer blackjack
+    if (dealerHand[0] % 13 === 0 && dealerHand[0] >= 9 && dealerHand[1] % 13 >= 9 || dealerHand[1] % 13 === 0 && dealerHand[0] >= 9 && dealerHand[0] % 13 >= 9) {
+        //reveal dealer card
+        document.getElementById("dealerHand").innerHTML = cards[dealerHand[0]] + cards[dealerHand[1]];
+        updateResult("Dealer wins");
     }
 }
 
-//monke
+function hit() {
+    //only draw if not busted
+    if (!isBusted(playerHand)) {
+        //draw card
+        playerHand[playerHand.length] = Math.round(Math.random() * 51);
+        updatePlayerHand();
 
-var gorillaSpinMult = 0;
-var frictionPerSecond = .9;
-var reduceFrictionCost = 50;
-function spinGorilla() {
-    gorillaSpinMult++;
-    updateRotationSpeed();
-    updateGorillaVideo();
+        //check for bust
+        if (isBusted(playerHand)){
+            updateResult("Player busts");
+        }
+    }
 }
 
-function reduceFriction(){
-    if (money >= reduceFrictionCost) {
-        money -= reduceFrictionCost;
-        frictionPerSecond *= .9;
-        reduceFrictionCost += 50;
+function stand() {
+    //only stand if not busted
+    if (!isBusted(playerHand)) {
+        //reveal card
+        document.getElementById("dealerHand").innerHTML = cards[dealerHand[0]] + cards[dealerHand[1]];
 
-        if (frictionPerSecond <= 0) {
-            frictionPerSecond = Number.MIN_VALUE;
+        //keep drawing until over 17
+        while (handValue(dealerHand) < 17) {
+            dealerHand[dealerHand.length] = Math.round(Math.random() * 51)
+            updateDealerHand();
         }
 
-        updateReduceFrictionButton();
-        updateFrictionPerSecond();
-    } else {
-        alert("Too expensive!");
+        //if dealer busted
+        if (isBusted(dealerHand)) {
+            updateResult("Dealer busts");
+            money += bet * 2;
+            updateMoney();
+        }
+
+        //check who won
+        //if player wins
+        else if (handValue(playerHand) > handValue(dealerHand)) {
+            updateResult("You win");
+            money += bet * 2;
+            updateMoney();
+        }
+
+        //if draw
+        else if (handValue(playerHand) === handValue(dealerHand)) {
+            updateResult("Push");
+            money += bet;
+            updateMoney();
+        }
+
+        //if lose
+        else if (handValue(playerHand) < handValue(dealerHand)) {
+            updateResult("Dealer wins");
+        }
     }
 }
 
-function changeGorillaSpinMult() {
-    money += gorillaSpinMult;
+//helper fuctions
+function handValue(hand) {
+    //sum with low aces
+    hand = hand.map((n) => (n % 13 >= 9) ? 10 : (n % 13) + 1);
+    var total = hand.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
-    if (gorillaSpinMult > 0) {
-        gorillaSpinMult *= 1 - frictionPerSecond;
+    //if there is an ace and the total is low
+    if (total <= 11 && hand.includes(1)) {
+        return total + 10;
     }
-    
-    if (gorillaSpinMult <= .1) {
-        gorillaSpinMult = 0;
-    }
-
-    //update relevant variables
-    updateGorillaVideo();
-    updateMoney();
-    updateRotationSpeed();
+    return total;
 }
-setInterval(changeGorillaSpinMult, 1000);
+
+function isBusted(hand) {
+    return 21 < handValue(hand);
+}
