@@ -27,7 +27,7 @@ function save() {
 function saveAsCookie() {
     const ONE_YEAR = 31_556_952_000;//ms
     document.cookie = "Clicker-ProjectJSON=" + createSaveCode() + " ;expires=" + new Date(Date.now() + ONE_YEAR).toUTCString() + " ;domain=192.168.3.129";
-    document.cookie = "money=" + money + " ;expires=" + new Date(Date.now() + ONE_YEAR).toUTCString() + " ;domain=192.168.3.129";
+    document.cookie = "money=" + money + " ;expires=" + new Date(Date.now() + ONE_YEAR).toUTCString() + " ;domain=192.168.3.129 ;path=/";
 }
 
 //autosave
