@@ -26,6 +26,7 @@
     height: auto;
     width: 100%;
     overflow: hidden;
+    background-color: #66FFE6;
 }
 
 #picAndTitleLink {
@@ -36,4 +37,5 @@
 #footerBox {
     height: auto;
     width: 100%;
+    background-color: #66FFE6;
 }
