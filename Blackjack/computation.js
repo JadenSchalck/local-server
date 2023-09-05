@@ -43,19 +43,25 @@ function submitBet() {
 }
 
 //game stuff
-var cards = [
+/*var cards = [
     "🂡","🂢","🂣","🂤","🂥","🂦","🂧","🂨","🂩","🂪","🂫","🂭","🂮",
     "🂱","🂲","🂳","🂴","🂵","🂶","🂷","🂸","🂹","🂺","🂻","🂽","🂾",
     "🃁","🃂","🃃","🃄","🃅","🃆","🃇","🃈","🃉","🃊","🃋","🃍","🃎",
     "🃑","🃒","🃓","🃔","🃕","🃖","🃗","🃘","🃙","🃚","🃛","🃝","🃞"
-];
+]; websites did not like this*/
+var cards = [
+    "&#x1F0A1","&#x1F0A2","&#x1F0A3","&#x1F0A4","&#x1F0A5","&#x1F0A6","&#x1F0A7","&#x1F0A8","&#x1F0A9","&#x1F0AA","&#x1F0AB","&#x1F0AD","&#x1F0AE",
+    "&#x1F0B1","&#x1F0B2","&#x1F0B3","&#x1F0B4","&#x1F0B5","&#x1F0B6","&#x1F0B7","&#x1F0B8","&#x1F0B9","&#x1F0BA","&#x1F0BB","&#x1F0BD","&#x1F0BE",
+    "&#x1F0C1","&#x1F0C2","&#x1F0C3","&#x1F0C4","&#x1F0C5","&#x1F0C6","&#x1F0C7","&#x1F0C8","&#x1F0C9","&#x1F0CA","&#x1F0CB","&#x1F0CD","&#x1F0CE",
+    "&#x1F0D1","&#x1F0D2","&#x1F0D3","&#x1F0D4","&#x1F0D5","&#x1F0D6","&#x1F0D7","&#x1F0D8","&#x1F0D9","&#x1F0DA","&#x1F0DB","&#x1F0DD","&#x1F0DE",
+]
 var dealerHand = [];
 var playerHand = [];
 function startGame() {
     //deal cards
     dealerHand = [Math.round(Math.random() * 51), Math.round(Math.random() * 51)];
     playerHand = [Math.round(Math.random() * 51), Math.round(Math.random() * 51)];
-    document.getElementById("dealerHand").innerHTML = "🂠" + cards[dealerHand[1]];
+    document.getElementById("dealerHand").innerHTML = "&#x1F0A0" + cards[dealerHand[1]];
     document.getElementById("playerHand").innerHTML = cards[playerHand[0]] + cards[playerHand[1]];
 
     //if player blackjack

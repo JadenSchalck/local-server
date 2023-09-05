@@ -32,3 +32,24 @@
     /*center text in box*/
     width:fit-content;
 }
+
+#dealerHand {
+    margin: 0;
+    font-size: 1000%;
+    font-weight: 100;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+#playerHand {
+    margin-top: 5%;
+    margin-bottom: 1%;
+    font-size: 1000%;
+    font-weight: 100;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+#buttonHolder {
+    margin-left: 45%;
+}

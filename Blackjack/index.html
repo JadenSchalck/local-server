@@ -36,10 +36,12 @@
         <div id="connotAffordText"></div>
 
         <!--play field-->
-        <h1 id="dealerHand">Dealer hand</h1>
-        <h1 id="playerHand">Player hand</h1>
-        <input type="button" id="hitButton" class="modern round button" onclick="hit()" value="Hit">
-        <input type="button" id="standButton" class="modern round button" onclick="stand()" value="Stand">
+        <p id="dealerHand">&#x1F0A0&#x1F0A0</p>
+        <p id="playerHand">&#x1F0A0&#x1F0A0</p>
+        <div id="buttonHolder">
+            <input type="button" id="hitButton" class="modern round button" onclick="hit()" value="Hit">
+            <input type="button" id="standButton" class="modern round button" onclick="stand()" value="Stand">
+        </div>
         <p id="result"></p>
     </body>
 
@@ -48,7 +50,7 @@
         <div id="bottomInfo" class="modern square float-container">
             <!--Version info-->
             <div id="otherInfo">
-                <h8>Version 1.0.1</h8><br>
+                <h8>Version 1.1.0</h8><br>
                 <h8>Last updated on Sep 5, 2023</h8>
             </div>
         </div>
