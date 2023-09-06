@@ -8,21 +8,38 @@
         <link rel="icon" type="image/x-icon" href="Placeholder.png"><!-- favicon -->
     </head>
     
-    <body>
-        <embed type="text/html" src="topBar.html"  width="100%" height="auto">
-        <h2 class="centered">"Quote from book/review"</h2>
-        <p id="description" style="float: left;"><b>Description roughly matching the back cover. </b>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius sagittis eros a pharetra. 
-        Proin vitae purus sapien. Morbi auctor rhoncus velit eget posuere. 
-        Nullam sed arcu vitae lacus pretium porttitor pretium ut magna. Nunc sit amet gravida nunc, vel suscipit risus. 
-        Vivamus rutrum nibh sit amet dolor sollicitudin, interdum convallis erat cursus. 
-        Suspendisse porta tellus eu sodales ultricies. Nunc vel mi congue mauris mollis tincidunt nec convallis neque. 
-        Suspendisse potenti. Vivamus molestie lorem iaculis lacus egestas, in convallis erat euismod. 
-        Fusce commodo sem at lorem varius pellentesque. Donec.</p>
-        <img src="Placeholder.png" style="float: right;">
-    </body>
+    <body onload="showProperSite();">
+        <!--top bar-->
+        <embed type="text/html" src="topBar.html"  width="100%" height="15%">
+        
+        <!--Desktop version-->
+        <div id="desktopSite">
+            <h2 class="centerText">"Quote from book/review"</h2>
+            <p id="desktopDescription" style="float: left;"><b>Description roughly matching the back cover. </b>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius sagittis eros a pharetra. 
+            Proin vitae purus sapien. Morbi auctor rhoncus velit eget posuere. 
+            Nullam sed arcu vitae lacus pretium porttitor pretium ut magna. Nunc sit amet gravida nunc, vel suscipit risus. 
+            Vivamus rutrum nibh sit amet dolor sollicitudin, interdum convallis erat cursus. 
+            Suspendisse porta tellus eu sodales ultricies. Nunc vel mi congue mauris mollis tincidunt nec convallis neque. 
+            Suspendisse potenti. Vivamus molestie lorem iaculis lacus egestas, in convallis erat euismod. 
+            Fusce commodo sem at lorem varius pellentesque. Donec.</p>
+            <img src="Placeholder.png" style="float: right;">
+        </div>
 
-    <footer>
-            <embed type="text/html" src="footer.html"  width="100%" height="200px">
-    </footer>
+        <!--Mobile version-->
+        <div id="mobileSite">
+            <h2 id="mobileQuote" class="centerText">"Quote from book/review"</h2>
+            <img id="mobileBookCover" src="Placeholder.png" class="centerImage">
+            <p id="mobileDescription"><b>Description roughly matching the back cover. </b>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius sagittis eros a pharetra. 
+            Proin vitae purus sapien. Morbi auctor rhoncus velit eget posuere. 
+            Nullam sed arcu vitae lacus pretium porttitor pretium ut magna. Nunc sit amet gravida nunc, vel suscipit risus. 
+            Vivamus rutrum nibh sit amet dolor sollicitudin, interdum convallis erat cursus. 
+            Suspendisse porta tellus eu sodales ultricies. Nunc vel mi congue mauris mollis tincidunt nec convallis neque. 
+            Suspendisse potenti. Vivamus molestie lorem iaculis lacus egestas, in convallis erat euismod. 
+            Fusce commodo sem at lorem varius pellentesque. Donec.</p>
+        </div>
+
+        <embed type="text/html" src="footer.html"  width="100%" height="20%">
+    </body>
 </html>

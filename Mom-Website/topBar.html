@@ -8,12 +8,25 @@
         <link rel="icon" type="image/x-icon" href="Placeholder.png"><!-- favicon -->
     </head>
     
-    <body id="topBar" class="modern square">
-        <div>
-            <a id="picAndTitleLink" href="index.html" target="_parent">
-                <img src="Placeholder.png" height="50" width="100">
-                <h2 id="title" class="centered">A Fariy's Tale</h2>
-            </a>
+    <body id="generalTopBar" class="modern square" onload="showProperSite();">
+        <!--Desktop version-->
+        <div id="desktopSite">
+            <div id="desktopTopBar">
+                <a id="picAndTitleLink" href="index.html" target="_parent">
+                    <img src="Placeholder.png" height="50" width="100">
+                    <h2 id="desktopTitle" class="centered">A Fariy's Tale</h2>
+                </a>
+            </div>
+        </div>
+
+        <!--Mobile version-->
+        <div id="mobileSite">
+            <div id="mobileTopBar">
+                <a id="picAndTitleLink" href="index.html" target="_parent">
+                    <img src="Placeholder.png" height="150" width="300">
+                    <h2 id="mobileTitle" class="centered">A Fariy's Tale</h2>
+                </a>
+            </div>
         </div>
     </body>
 </html>

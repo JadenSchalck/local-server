@@ -1,15 +1,36 @@
-.footerText {
-    float: left;
-    margin-left: 15%;
-    color: #000;
-}
-
 /*centers text because html tecnically removed <center>*/
-.centered {
+.centerText {
     text-align: center;
 }
 
-#description {
+.centerImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
+#generalTopBar {
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    background-color: #66FFE6;
+}
+
+#picAndTitleLink {
+    text-decoration: dashed;
+    color: #000;
+}
+
+#generalFooterBox {
+    width: 100%;
+    background-color: #66FFE6;
+}
+
+/*desktop mode*/
+
+#desktopDescription {
     width: 40%;
     line-height: 1.5;
     margin-bottom: 100px;
@@ -22,20 +43,70 @@
     line-height: 1.5;
 }
 
-#topBar {
+#desktopFooterBox {
     height: auto;
-    width: 100%;
-    overflow: hidden;
-    background-color: #66FFE6;
 }
 
-#picAndTitleLink {
-    text-decoration: dashed;
+.desktopFooterText {
+    float: left;
+    margin-left: 15%;
     color: #000;
 }
 
-#footerBox {
-    height: auto;
-    width: 100%;
-    background-color: #66FFE6;
+/*mobile mode*/
+/*top bar*/
+#mobileTitle {
+    font-size: 300%;
+}
+
+/*index*/
+#mobileQuote {
+    font-size: 500%;
+}
+
+#mobileBookCover {
+    width: 70%;
+    height: 85vw;
+}
+#mobileDescription {
+    width: 90%;
+    margin-left: 5%;
+    line-height: 1.5;
+    font-size: xx-large;
+}
+
+/*aboutUs*/
+#mobileAboutTheAuthor {
+    font-size: xx-large;
+}
+
+#mobileBiography {
+    font-size: xx-large;
+}
+
+/*footer*/
+#meetCreatorMobile {
+    font-size: xx-large;
+}
+
+#mobileLeftLinkBox {
+    width: 45%;
+}
+
+#mobileRightLinkBox {
+    width: 45%;
+}
+
+.mobileFooterText {
+    margin: 0;
+    color: #000;
+    font-size: xx-large;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
 }

@@ -8,15 +8,35 @@
         <link rel="icon" type="image/x-icon" href="Placeholder.png"><!-- favicon -->
     </head>
     
-    <body id="footerBox" class="modern square" style="overflow: hidden;">
-        <p><a href="aboutUs.html" target="_parent">Meet the creator</a></p>
-        <!--Social media links that open in a new tab-->
-        <a href="https://www.facebook.com" target="_blank"><p class="footerText"><u>Facebook</u></p></a>
-        <a href="https://www.youtube.com" target="_blank"><p class="footerText"><u>YouTube</u></p></a>
-        <a href="https://www.instagram.com" target="_blank"><p class="footerText"><u>Instagram</u></p></a>
-        <a href="https://www.twitter.com/authorjschalck" target="_blank"><p class="footerText"><u>Twitter (x)</u></p></a>
-        <br><br>
-        <h8>Version 0.4.0</h8><br>
-        <h8>Last updated on Sep 5, 2023</h8>
+    <body id="generalFooterBox" class="modern square" style="overflow: hidden;" onload="showProperSite();">
+        <!--Desktop version-->
+        <div id="desktopSite">
+            <p><a href="aboutUs.html" target="_parent">Meet the creator</a></p>
+            <!--Social media links that open in a new tab-->
+            <a href="https://www.facebook.com" target="_blank"><p class="desktopFooterText"><u>Facebook</u></p></a>
+            <a href="https://www.youtube.com" target="_blank"><p class="desktopFooterText"><u>YouTube</u></p></a>
+            <a href="https://www.instagram.com" target="_blank"><p class="desktopFooterText"><u>Instagram</u></p></a>
+            <a href="https://www.twitter.com/authorjschalck" target="_blank"><p class="desktopFooterText"><u>Twitter (x)</u></p></a>
+            <br><br>
+            <h8>Version 0.5.0</h8><br>
+            <h8>Last updated on Sep 6, 2023</h8>
+        </div>
+
+        <!--Mobile version-->
+        <div id="mobileSite">
+            <p id="meetCreatorMobile"><a href="aboutUs.html" target="_parent">Meet the creator</a></p>
+            <!--Social media links that open in a new tab-->
+            <div id="mobileLeftLinkBox" class="left">
+                <a href="https://www.facebook.com" target="_blank"><p class="mobileFooterText right"><u>Facebook</u></p></a><br><br>
+                <a href="https://www.youtube.com" target="_blank"><p class="mobileFooterText right"><u>YouTube</u></p></a>
+            </div>
+            <div id="mobileRightLinkBox" class="right">
+                <a href="https://www.instagram.com" target="_blank"><p class="mobileFooterText left"><u>Instagram</u></p></a><br><br>
+                <a href="https://www.twitter.com/authorjschalck" target="_blank"><p class="mobileFooterText left"><u>Twitter (x)</u></p></a>
+            </div>
+            <br><br><br>
+            <h8>Version 0.5.0</h8><br>
+            <h8>Last updated on Sep 6, 2023</h8>
+        </div>
     </body>
 </html>
